@@ -1,3 +1,2 @@
 # OAuth2Kit
-
-A description of this package.
+OAuth2 implementation with plug-able network layer, work inprogess.
