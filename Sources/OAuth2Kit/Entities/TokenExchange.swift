@@ -12,7 +12,7 @@ public enum OAuth2GrantType: String {
 public struct TokenExchangeRequest {
     public let endpoint: URL
     public let code: String
-    public let client: Client
+    public let client: OAuthClient
     public let redirectURI: URL
     public let grantType: OAuth2GrantType
 }
@@ -27,10 +27,17 @@ public struct TokenExchangeRequest {
 public struct TokenExchangeResult: Codable {
     public let accessToken: String
     public let tokenType: String
-    public let expiresIn: Date?
+    public let expiresIn: Int?
     public let refreshToken: String?
     public let exampleParameter: String?
     public let scope: String?
     
-    //add mapping for properties
+    private enum CodingKeys : String, CodingKey {
+        case accessToken = "access_token"
+        case tokenType = "token_type"
+        case expiresIn = "expires_in"
+        case refreshToken = "refresh_token"
+        case exampleParameter = "example_parameter"
+        case scope
+    }
 }

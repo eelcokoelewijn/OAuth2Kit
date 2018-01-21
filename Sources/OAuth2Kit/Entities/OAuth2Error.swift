@@ -11,5 +11,11 @@ public struct OAuth2Error: Error, Codable {
     let state: String?
     let errorDescription: String?
     let errorURI: URL?
-    // add mapping for properties!
+
+    private enum CodingKeys : String, CodingKey {
+        case error
+        case state
+        case errorDescription = "error_description"
+        case errorURI = "error_uri"
+    }
 }

@@ -11,7 +11,7 @@ public enum OAuth2ResponseType: String {
 public struct AuthorizationRequest {
     public let endpoint: URL
     public let responseType: OAuth2ResponseType
-    public let client: Client
+    public let client: OAuthClient
     public let redirectURI: URL
     public let scope: String
     public let state: String

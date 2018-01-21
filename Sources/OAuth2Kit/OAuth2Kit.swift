@@ -5,13 +5,6 @@ public enum OAuth2Result<ResultType> {
     case failed(OAuth2Error)
 }
 
-// MARK: Client entity
-
-public struct Client {
-    public let clientId: String
-    public let clientSecret: String?
-}
-
 // MARK: OAuth2Kit interface + implementation
 
 public protocol OAuth2Kit {
